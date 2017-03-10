@@ -1,13 +1,6 @@
 
 <html>
 <body>
-  Arvaa numero 1-10 välillä:
-      <br>
-        <form action="kirjautuminen_session.php" method="post">
-            <input type="string" name="tunnus" required/><br>
-            <br>
-            <input type="submit" name="Kirjaudu" value="Tarkista osuitko oikeaan."/>
-        </form>
 
 <?php
 
@@ -23,12 +16,31 @@ session_start();
 
 //määritetään istuntomuuttujat
 
-$_SESSION["nimi"] = "Markus";
+$_SESSION["nimi"] = $_POST["nimi"];
+$_SESSION["salasana"] = $_POST["salasana"];
 
-$_SESSION["auto"] = "Jopo";
+if (!empty($_POST['nimi'])) {
 
+echo "Tervetuloa! ".($_session['nimi']);
+}
+else{
+
+echo "Kirjoita nimi ja salasana";
+}
 
 
  ?>
+
+ Nimi:
+     <br>
+       <form action="kirjautuminen_session.php" method="post">
+         <input type="string" name="nimi" required/><br>
+ Salasana:
+         <br>
+         <input type="string" name="salasana" required/><br>
+           <br>
+           <input type="submit" name="Kirjaudu" value="Kirjaudu."/>
+       </form>
+
 </body>
 </html>
