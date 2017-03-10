@@ -12,15 +12,7 @@
 
   //aloitetaan istunto
 
-  session_start();
 
-  //määritetään istuntomuuttujat
-
-  $_SESSION["nimi"] = $_POST["nimi"];
-  $_SESSION["salasana"] = $_POST["salasana"];
-  ?>
-
-<?php
 //Kun nimi kenttä on tyhjä pyydetään kirjoittamaan nimi ja salasana
 if (empty($_POST['nimi']))
  {echo "Kirjoita nimi ja oikea salasana";
@@ -31,7 +23,7 @@ if (empty($_POST['nimi']))
      <br>
        <form action="kirjautuminen_session.php" method="post">
          <input type="string" name="nimi" required/><br>
- Salasana:
+ Salasana (123):
          <br>
          <input type="string" name="salasana" required/><br>
            <br>
@@ -39,7 +31,7 @@ if (empty($_POST['nimi']))
        </form>
 <?php
 //Jos salasanaa ei ole kirjoitettu oiken, pyydetään täyttämään tiedot oikein
-elseif ($_POST['salasana'] != "123")
+}elseif ($_POST['salasana'] != "123")
   {echo "Salasana väärin. Yritä uudelleen";
 ?>
     <br>
@@ -48,7 +40,7 @@ elseif ($_POST['salasana'] != "123")
          <br>
            <form action="kirjautuminen_session.php" method="post">
              <input type="string" name="nimi" required/><br>
-     Salasana:
+     Salasana (123):
              <br>
              <input type="string" name="salasana" required/><br>
                <br>
@@ -61,10 +53,18 @@ elseif ($_POST['salasana'] != "123")
   echo "Tervetuloa ".($_POST['nimi']." !");
   echo "<br />";
   echo "<br />";
-  echo "Tarkastele tietojasi";
+  echo '<a href="http://195.148.97.131/~anniv/php/oliot/kirjautunut_session.php">Tarkastele tietojasi</a>';
+
 
 
 }
+session_start();
+
+//määritetään istuntomuuttujat
+
+$_SESSION["nimi"] = $_POST["nimi"];
+$_SESSION["salasana"] = $_POST["salasana"];
+
 
   ?>
 </body>
