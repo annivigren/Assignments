@@ -3,7 +3,7 @@
  <title> Kiipeilyreitit </title>
 </head>
 <body>
- <h1>Kiipeilyreitit</h1>
+ <h1>Kiipeilyreitit - tikkilista</h1>
 <p>
 <?php
 // aukaistaan tietokantayhteys
