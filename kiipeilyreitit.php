@@ -8,7 +8,7 @@
 <?php
 // aukaistaan tietokantayhteys
 $mysql_yhteys =
-mysqli_connect("", "okp", "oli9tRR3", "anni_okp");
+mysqli_connect("", "okp", "oli9tRR3", "anni-okp");
 // tarkista virheet
 if (mysqli_connect_errno()) {
  echo "Yhteysvirhe tietokantaan: " . mysqli_connect_error();
@@ -19,9 +19,9 @@ $hakutulos=mysqli_query($mysql_yhteys, $sqlkom);
 
       echo "<table border=!>
       <tr>
-      <th>reitinnimi</th>
-      <th>kallio</th>
-      <th>greidi</th>
+      <th>Reitin nimi</th>
+      <th>Kallio</th>
+      <th>Greidi</th>
       </tr>";
 
 while($rivi=mysqli_fetch_array($hakutulos))
