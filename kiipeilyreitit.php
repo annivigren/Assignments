@@ -8,7 +8,7 @@
 <?php
 // aukaistaan tietokantayhteys
 $mysql_yhteys =
-mysqli_connect("", "okp", "oli9tRR3", "annin_db");
+mysqli_connect("", "okp", "oli9tRR3", "anni_okp");
 // tarkista virheet
 if (mysqli_connect_errno()) {
  echo "Yhteysvirhe tietokantaan: " . mysqli_connect_error();
