@@ -1,4 +1,5 @@
 <?php
+//TÄMÄ ON KESKEN!
 // muodostetaan yhteys tietokantaan (virheenkäsittelyllä)
 try {
 $yhteys = new PDO ("mysql:host=localhost;dbname=anni-okp", "okp", "oli9tRR3");
