@@ -37,12 +37,24 @@
 
           $KuvanNimi = ($_POST['nimi']);
           $KuvatiedostonNimi = ($_FILES["kuva"]["name"]);
-          $Polku = "kuva";
+          $Polku = $upload_dir;
           $LisaysPvm = date("Y/m/d");
           $Tyyppi = pathinfo($target_file,PATHINFO_EXTENSION);
           $Koko = ($_FILES["kuva"]["size"]);
 
-        if(isset($_POST['submit'])) {
+          if(isset($_POST['submit'])) {
+          if(move_uploaded_file($tmp_file, $upload_dir."/".$target_file)){
+
+          echo "File uploaded successfully.";
+
+          }else {
+
+          echo $_FILES['kuva']['error'];
+
+          }
+
+          }
+
           $servername = "localhost";
           $username = "okp";
           $password = "oli9tRR3";
@@ -70,21 +82,14 @@
 
         // any other reason
 
-        if(move_uploaded_file($tmp_file, $upload_dir."/".$target_file)){
-
-        echo "File uploaded successfully.";
-        //ao. rivi lisätty
-        echo $_FILES['kuva']['name'];
-
-        } else {
-
-        echo $_FILES['kuva']['error'];
 
         }
-        }
 
 
-    }
 
-$conn = null;
+
+
+
+
+    $conn = null;
 ?>
