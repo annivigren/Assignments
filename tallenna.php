@@ -33,14 +33,7 @@
 
         $upload_dir = "uploads";
 
-        //Määritellään tietokantaan tallennettavat tiedot parametreihin
 
-          $KuvanNimi = ($_POST['nimi']);
-          $KuvatiedostonNimi = ($_FILES["kuva"]["name"]);
-          $Polku = $upload_dir;
-          $LisaysPvm = date("Y/m/d");
-          $Tyyppi = pathinfo($target_file,PATHINFO_EXTENSION);
-          $Koko = ($_FILES["kuva"]["size"]);
 
           if(isset($_POST['submit'])) {
           if(move_uploaded_file($tmp_file, $upload_dir."/".$target_file)){
@@ -54,6 +47,15 @@
           }
 
           }
+          //Määritellään tietokantaan tallennettavat tiedot parametreihin
+
+            $KuvanNimi = ($_POST['nimi']);
+            $KuvatiedostonNimi = ($_FILES["kuva"]["name"]);
+            $Polku = $upload_dir;
+            $LisaysPvm = date("Y/m/d");
+            $Tyyppi = pathinfo($target_file,PATHINFO_EXTENSION);
+            $Koko = ($_FILES["kuva"]["size"]);
+
 
           $servername = "localhost";
           $username = "okp";
@@ -68,6 +70,7 @@
       VALUES ('$KuvanNimi', '$KuvatiedostonNimi', '$Polku', '$LisaysPvm','$Tyyppi', '$Koko')";
       // use exec() because no results are returned
       $conn->exec($sql);
+      echo "<br>";
       echo "Tietue tallennettu onnistuneesti";
       }
       catch(PDOException $e)
