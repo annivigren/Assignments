@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vaalikone</title>
+</head>
+   <body>
+
+     Kysymys 1
+     <br>
+     <input type="radio" name="K1" value=1>
+     1<br>
+     <input type="radio" name="K1" value=2>
+     2<br>
+     <input type="radio" name="K1" value=3>
+     3<br>
+     <input type="radio" name="K1" value=4>
+     4<br>
+     <input type="radio" name="K1" value=5>
+     5<br>
+     <br>
+     Kysymys 2
+     <br>
+     <input type="radio" name="K2" value=1>
+     1<br>
+     <input type="radio" name="K2" value=2>
+     2<br>
+     <input type="radio" name="K2" value=3>
+     3<br>
+     <input type="radio" name="K2" value=4>
+     4<br>
+     <input type="radio" name="K2" value=5>
+     5<br>
+
+<input type="button" value ="laske" onclick="lasketulos()">
+<br><br>
+
+ <input type="text" id="tulos" size=50> <br>
+ <br>
+ <input type="text" id="tuloska" size=50>
+
+<script>
+function lasketulos(){
+  var a,b;
+  a= 0;
+  b= 0;
+
+    document.getElementById("tulos").value =
+    document.querySelector('input[name="K1"]:checked').value
+    +" "+
+    document.querySelector('input[name="K2"]:checked').value;
+
+   a =  parseInt(document.querySelector('input[name="K1"]:checked').value);
+   b =  parseInt(document.querySelector('input[name="K2"]:checked').value);
+
+   document.getElementById("tuloska").value=(a+b)/2
+
+}
+</script>
+</body>
+</html>
