@@ -2,7 +2,41 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 12pt;
   position: relative;
-  margin:0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    background-color: #f1f1f1;
+    opacity: 1.0;
+}
+
+li {
+    float: left;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+    background-color: #50606F;
+    color: white;
+    font-weight: bold;
+}
+
+li a:hover {
+    background-color: #444D5C;
+    color: white;
 }
 
 h1 {
@@ -12,7 +46,7 @@ h1 {
   color: #555;
   font-family: 'Averia Serif Libre', cursive;
   font-size: 40px;
-  z-index: 40;
+  z-index: 50;
   opacity: 1.0;
   text-align: center;
   vertical-align: center;
@@ -39,7 +73,7 @@ div.textbox {
   position: absolute;
   margin-top: 10px;
   right: 10px;
-  z-index: 30;
+  z-index: 50;
   padding: 10px;
   }
 
@@ -53,7 +87,7 @@ div.textbox {
     width: 200px;
     margin-top: -100px;
     margin-left: -100px;
-    z-index: 30;
+    z-index: 50;
     padding: 15px;
     line-height: 1.8;
     font-size: 18px;
@@ -64,11 +98,11 @@ div.textbox {
       text-align: left;
       opacity: 0.8;
       position: relative;
-      top: 70px;
+      top: 90px;
       left: 10%;
       width: 80%;
       margin-top: 20px;
-      z-index: 30;
+      z-index: 50;
       padding: 15px;
       line-height: 1.8;
       }
@@ -83,17 +117,6 @@ div.textbox {
       margin-right:: 20px;
 
   }
-  table{
-    top: 70px;
-    left: 10%;
-    background-color: white;
-    position: relative;
-    z-index: 30;
-    width: 60%;
-    opacity: 0.8;
-    padding-bottom: 40px;
-  }
-
   td.header {
     width: 35%;
 
@@ -194,36 +217,17 @@ img.bg {
       margin-right: 0;
     }
   }
+  /* responsive */
 
-
-
-
-
-
-
-
-
-    /* responsive */
-
-  .topnav{
+  .topnav {
   overflow: hidden;
-  padding: 0;
-  position: fixed;
-  top: 0;
-  z-index: 50;
-  width: 100%;
-  background-color: #f1f1f1;
-  opacity: 1.0;
-}
-
-.topnav {
-    float: left;
+  background-color: #333;
 }
 
 .topnav a {
   float: left;
   display: block;
-  color: #000;
+  color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -231,14 +235,8 @@ img.bg {
 }
 
 .topnav a:hover {
-  background-color: #444D5C;
-  color: white;
-}
-
-.topnav a.active {
-    background-color: #50606F;
-    color: white;
-    font-weight: bold;
+  background-color: #ddd;
+  color: black;
 }
 
 .topnav .icon {
