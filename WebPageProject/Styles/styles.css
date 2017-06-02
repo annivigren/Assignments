@@ -1,10 +1,10 @@
 body {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Josefin Sans', sans-serif; /*font of body text. Google font */
   font-size: 12pt;
   position: relative;
   margin:0;
 }
-
+/* Home Page */
 h1 {
   position: relative;
   width: 100%;
@@ -17,6 +17,7 @@ h1 {
   text-align: center;
   vertical-align: center;
 }
+/* Home Page */
 h2 {
     position: relative;
     width: 100%;
@@ -26,12 +27,12 @@ h2 {
     text-align: center;
     vertical-align: center;
   }
-
+/* Projects and Skills */
 h3 {
   font-size: 16pt;
 
 }
-
+/* Home Page textbox*/
 div.textbox {
   background-color: #f1f1f1;
   text-align: left;
@@ -43,7 +44,8 @@ div.textbox {
   padding: 10px;
   }
 
-  div.textbox2 {
+  /* Contact textbox*/
+  div.contact {
     background-color: #f1f1f1;
     text-align: center;
     opacity: 0.8;
@@ -59,7 +61,8 @@ div.textbox {
     font-size: 18px;
     }
 
-    div.blog {
+  /* Blog textbox */
+  div.blog {
       background-color: #f1f1f1;
       text-align: left;
       opacity: 0.8;
@@ -73,7 +76,7 @@ div.textbox {
       line-height: 1.8;
       }
 
-
+  /* For Skills and projects */
   tr, th, td {
       top: 50px;
       position: relative;
@@ -81,8 +84,9 @@ div.textbox {
       text-align: left;
       margin-left: 20px;
       margin-right:: 20px;
-
   }
+
+  /* For Skills and projects */
   table{
     top: 70px;
     left: 10%;
@@ -94,42 +98,48 @@ div.textbox {
     padding-bottom: 40px;
   }
 
+  /* Projects */
   td.header {
     width: 35%;
 
   }
-
+  /* Skills */
   img.icons {
-    width: 80px;
+    width: 80px;   /* Size of icons */
+
   }
 
-  span{
-  position:absolute; /*see support section for more info on positioning*/
-  left: -9999px; /*moves the span off the page, effectively hidding it from view*/
-  }
+  /* Enlarge photos in the proct page when hover*/
+    span{
+      position:absolute; /*see support section for more info on positioning*/
+      left: -9999px; /*moves the span off the page, effectively hidding it from view*/
+    }
 
-  img.projects{
-  background-color: #f1f1f1; /*frame colour*/
-  padding: 6px; /*frame size*/
-  }
+    img.projects{
+      background-color: #f1f1f1; /*frame colour*/
+      padding: 6px; /*frame size*/
+    }
 
-  td.enlarge:hover{
-  z-index: 50; /*places the popups infront of the thumbnails, which we gave a z-index of 0 in step 1*/
-  cursor:pointer; /*changes the cursor to a hand*/
-  }
-  /***We bring the large image back onto the page by reducing left from -9999px (set in step 2) to figures below***/
-  td.enlarge:hover span{ /*positions the <span> when the <li> (which contains the thumbnail) is hovered*/
-  top: 0px; /*the distance from the bottom of the thumbnail to the top of the popup image*/
-  left: -20px; /*distance from the left of the thumbnail to the left of the popup image*/
-  }
-  /***To make it look neater we used :nth-child to set a different left distance for each image***/
-  td.enlarge:hover:nth-child(2) span{
-  left: -100px;
-  }
-  td.enlarge:hover:nth-child(3) span{
-  left: -200px;
-  }
+    /* Shows bigger picture when hover */
+    td.enlarge:hover{
+      z-index: 50; /*places the popups infront of the thumbnails, which has a smaller z-index
+      cursor:pointer; /*changes the cursor to a hand*/
+    }
+    /***We bring the large image back onto the page by reducing left from -9999px (set in step 2) to figures below***/
+    td.enlarge:hover span{ /*positions the <span> when the <li> (which contains the thumbnail) is hovered*/
+      top: 0px; /*the distance from the bottom of the thumbnail to the top of the popup image*/
+      left: -20px; /*distance from the left of the thumbnail to the left of the popup image*/
+    }
+    /***To make it look neater we used :nth-child to set a different left distance for each image***/
+    td.enlarge:hover:nth-child(2) span{
+      left: -100px;
+    }
+    td.enlarge:hover:nth-child(3) span{
+      left: -200px;
+    }
 
+
+/* To se backgroud images */
 img.bg {
     /* Set rules to fill background */
     min-height: 100%;
@@ -154,8 +164,7 @@ img.bg {
     }
   }
 
-
-
+/* Gallery for photos */
   div.gallery {
     font-size: 0;
     justify-content: space-between;
@@ -199,6 +208,7 @@ img.bg {
 
   .topnav{
   overflow: hidden;
+  float: left;
   padding: 0;
   position: fixed;
   top: 0;
@@ -206,10 +216,6 @@ img.bg {
   width: 100%;
   background-color: #f1f1f1;
   opacity: 1.0;
-}
-
-.topnav {
-    float: left;
 }
 
 .topnav a {
@@ -258,6 +264,7 @@ img.bg {
     text-align: left;
   }
 }
+/* Date in the bottom of the home page */
 
 #date {
   background-color: #f1f1f1;
